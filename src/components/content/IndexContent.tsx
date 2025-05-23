@@ -7,7 +7,7 @@ import {
 
 export default function Home() {
   return (
-    <main className="w-full h-full min-h-screen flex items-center justify-center text-[#d1d1d1] font-['JetBrains_Mono'] px-4 overflow-x-hidden">
+    <main className="w-full h-full min-h-screen flex items-center justify-center text-[#d1d1d1] font-['JetBrains_Mono'] px-4">
       <div className="max-w-5xl w-full flex flex-col md:flex-row items-center justify-between gap-10 p-8">
         {/* Sección izquierda */}
         <section className="space-y-8 text-left w-full md:w-1/2">
