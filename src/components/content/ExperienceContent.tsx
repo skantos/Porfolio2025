@@ -33,7 +33,7 @@ const ExperienceContent: React.FC = () => {
         "Contribución a la documentación técnica de proyectos",
         "Conexión de interfaces con servicios web"
       ],
-      technologies: ["JavaScript", "HTML5", "CSS3", "Bootstrap", "APIs REST"]
+      technologies: ["JavaScript", "Odoo", "Python", "HTML5", "CSS3", "Bootstrap", "APIs REST"]
     }
   ];
 

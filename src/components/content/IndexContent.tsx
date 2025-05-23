@@ -1,137 +1,61 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Code, Folder, FileText, Terminal } from 'lucide-react';
+import React from "react";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaCode,
+} from "react-icons/fa";
 
-const TypewriterText: React.FC<{ text: string; delay?: number }> = ({ text, delay = 0 }) => {
-  const characters = Array.from(text);
-  
+export default function Home() {
   return (
-    <div className="inline-block">
-      {characters.map((char, index) => (
-        <motion.span
-          key={index}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.05, delay: delay + index * 0.04 }}
-        >
-          {char}
-        </motion.span>
-      ))}
-    </div>
-  );
-};
+    <main className="w-full h-full min-h-screen flex items-center justify-center text-[#d1d1d1] font-['JetBrains_Mono'] px-4 overflow-x-hidden">
+      <div className="max-w-5xl w-full flex flex-col md:flex-row items-center justify-between gap-10 p-8">
+        {/* Sección izquierda */}
+        <section className="space-y-8 text-left w-full md:w-1/2">
+          <div>
+            <h1 className="text-4xl font-bold text-[#00ffcc]">Samuel Gajardo</h1>
+            <p className="text-lg text-[#999]">Software Development Engineer</p>
+          </div>
 
-const CommandLine: React.FC<{ command: string; output: string | React.ReactNode; delay?: number }> = ({ 
-  command, output, delay = 0 
-}) => {
-  return (
-    <div className="mb-4">
-      <div className="flex items-center text-gray-300 mb-1">
-        <span className="text-green-400 mr-2">$</span>
-        <TypewriterText text={command} delay={delay} />
-      </div>
-      <div className="ml-4 text-gray-300">
-        {typeof output === 'string' ? (
-          <TypewriterText text={output} delay={delay + command.length * 0.04 + 0.2} />
-        ) : (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3, delay: delay + command.length * 0.04 + 0.2 }}
-          >
-            {output}
-          </motion.div>
-        )}
-      </div>
-    </div>
-  );
-};
+          <div>
+            <h2 className="text-xl mb-2 text-[#00ffff]">Habilidades</h2>
+            <ul className="space-y-2 text-sm">
+              <li><span className="text-[#00ffcc] font-medium">Proactividad:</span> Iniciativa constante para mejorar procesos y anticiparse a problemas.</li>
+              <li><span className="text-[#00ffcc] font-medium">Aprendizaje continuo:</span> Actualización constante de conocimientos técnicos y tendencias.</li>
+              <li><span className="text-[#00ffcc] font-medium">Autodidacta:</span> Capacidad de aprender por cuenta propia de forma efectiva.</li>
+              <li><span className="text-[#00ffcc] font-medium">Adaptabilidad:</span> Flexibilidad para enfrentar nuevos entornos y desafíos con rapidez.</li>
+              <li><span className="text-[#00ffcc] font-medium">Comunicación:</span> Claridad y eficacia para trabajar en equipo y compartir ideas.</li>
+            </ul>
+          </div>
 
-const IndexContent: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-gray-900 text-gray-100 p-8 font-mono flex items-center justify-center">
-      <div className="max-w-4xl w-full">
-        {/* Header Section */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-blue-400 mb-2">Raj Savaliya</h1>
-          <p className="text-gray-400">Software Development Engineer</p>
-        </div>
+          <div>
+            <h2 className="text-xl mb-2 text-[#00ffff]">Empecemos</h2>
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2">📘 <a href="#" className="hover:underline">Skills ...</a></li>
+              <li className="flex items-center gap-2">📁 <a href="#" className="hover:underline">Projects ...</a></li>
+              <li className="flex items-center gap-2">💬 <a href="#" className="hover:underline">Get in Touch ...</a></li>
+            </ul>
+          </div>
+        </section>
 
-        {/* Start Section */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold text-gray-300 mb-4">Start</h2>
-          <ul className="space-y-2">
-            <li className="flex items-center">
-              <input type="checkbox" className="mr-2" disabled />
-              <span className="text-gray-400">Skills...</span>
-            </li>
-            <li className="flex items-center">
-              <input type="checkbox" className="mr-2" checked readOnly />
-              <span className="text-gray-400">Projects...</span>
-            </li>
-            <li className="flex items-center">
-              <span className="text-gray-400"># Arims...</span>
-            </li>
-            <li className="flex items-center">
-              <input type="checkbox" className="mr-2" checked readOnly />
-              <span className="text-gray-400">Get in Touch...</span>
-            </li>
-          </ul>
-        </div>
+        {/* Sección derecha */}
+        <aside className="w-full md:w-1/2 space-y-4">
+          <h2 className="text-xl text-left text-[#00ffff]">About</h2>
+          <div className="space-y-4">
+            <a href="https://www.linkedin.com/in/samuel-gajardos/" className="flex items-center justify-start bg-[#1a1a1a] hover:bg-[#222] border-l-4 border-[#00ffcc] py-3 px-4 rounded-md gap-2 transition">
+              <FaLinkedin className="text-blue-400" /> LinkedIn Profile
+            </a>
+            <a href="https://github.com/skantos" className="flex items-center justify-start bg-[#1a1a1a] hover:bg-[#222] border-l-4 border-[#00ffcc] py-3 px-4 rounded-md gap-2 transition">
+              <FaGithub className="text-gray-300" /> Github Page
+            </a>
 
-        {/* Recent Section */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold text-gray-300 mb-4">Recent</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <p className="text-gray-400">Email: <span className="text-blue-400">E./RajSavaliyaE.mail</span></p>
-            </div>
-            <div>
-              <p className="text-gray-400">Skills: <span className="text-blue-400">E./RajSavaliyaSkills</span></p>
-            </div>
-            <div>
-              <p className="text-gray-400">Experience: <span className="text-blue-400">E./RajSavaliyaExperience</span></p>
-            </div>
-            <div>
-              <p className="text-gray-400">Projects: <span className="text-blue-400">E./RajSavaliyaProjects</span></p>
-            </div>
-            <div>
-              <p className="text-gray-400">Projects/8: <span className="text-blue-400">E./RajSavaliyaProjects/8</span></p>
+            {/* Animación de programación */}
+            <div className="animate-pulse flex items-center gap-2 text-sm text-[#00ffcc] mt-6">
+              <FaCode className="text-xl" />
+              <span>Código en constante evolución...</span>
             </div>
           </div>
-        </div>
-
-        {/* About Section */}
-        <div>
-          <h2 className="text-xl font-semibold text-gray-300 mb-4">About</h2>
-          <ul className="space-y-2">
-            <li className="flex items-center">
-              <input type="checkbox" className="mr-2" disabled />
-              <span className="text-gray-400">LinkedIn Profile</span>
-            </li>
-            <li className="flex items-center">
-              <input type="checkbox" className="mr-2" checked readOnly />
-              <span className="text-gray-400">Grinko Page</span>
-            </li>
-            <li className="flex items-center">
-              <input type="checkbox" className="mr-2" checked readOnly />
-              <span className="text-gray-400">Twitter Handle</span>
-            </li>
-            <li className="flex items-center">
-              <input type="checkbox" className="mr-2" checked readOnly />
-              <span className="text-gray-400">Product Hunt Page</span>
-            </li>
-            <li className="flex items-center">
-              <input type="checkbox" className="mr-2" checked readOnly />
-              <span className="text-gray-400">Peerist Page</span>
-            </li>
-          </ul>
-        </div>
+        </aside>
       </div>
-    </div>
+    </main>
   );
-};
-
-export default IndexContent;
-
-IndexContent
+}

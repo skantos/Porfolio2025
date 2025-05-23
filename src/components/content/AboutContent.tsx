@@ -55,7 +55,6 @@ const AboutMe: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Información Personal - Mejorado para móvil */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -116,54 +115,34 @@ const AboutMe: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.4 }}
               >
-                <span className="text-yellow-300">Ingeniero Informático</span> con experiencia en desarrollo de aplicaciones, tanto en el <span className="text-blue-300">Backend</span> como en el <span className="text-blue-300">Frontend</span>.
+                Soy <span className="text-yellow-300">Ingeniero Informático</span> con interés en el desarrollo de aplicaciones web, tanto en el <span className="text-blue-300">frontend</span> como en el <span className="text-blue-300">backend</span>.
               </motion.p>
               
-              <motion.div
-                className="flex items-start"
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.5 }}
-              >
+              <motion.div className="flex items-start" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.5 }}>
                 <Database className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 text-purple-400 mr-2 mt-0.5" />
                 <p className="text-gray-300">
-                  Experto en bases de datos <span className="text-purple-300">SQL</span> y <span className="text-purple-300">NoSQL</span>.
-                </p>
-              </motion.div>
-              
-              <motion.div
-                className="flex items-start"
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.6 }}
-              >
-                <Cpu className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 text-green-400 mr-2 mt-0.5" />
-                <p className="text-gray-300">
-                  Profesional <span className="text-green-300">proactivo</span> en constante aprendizaje.
-                </p>
-              </motion.div>
-              
-              <motion.div
-                className="flex items-start"
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.7 }}
-              >
-                <Smartphone className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 mr-2 mt-0.5" />
-                <p className="text-gray-300">
-                  Enfoque en <span className="text-yellow-300">Frontend</span> moderno.
+                  He trabajado con bases de datos <span className="text-purple-300">SQL</span> y <span className="text-purple-300">NoSQL</span> en proyectos personales y académicos.
                 </p>
               </motion.div>
 
-              <motion.div
-                className="flex items-start"
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.8 }}
-              >
+              <motion.div className="flex items-start" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.6 }}>
+                <Cpu className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 text-green-400 mr-2 mt-0.5" />
+                <p className="text-gray-300">
+                  Me gusta aprender nuevas tecnologías y mejorar constantemente mis habilidades.
+                </p>
+              </motion.div>
+              
+              <motion.div className="flex items-start" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.7 }}>
+                <Smartphone className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 mr-2 mt-0.5" />
+                <p className="text-gray-300">
+                  Me interesa crear interfaces modernas y adaptables para dispositivos móviles y escritorio.
+                </p>
+              </motion.div>
+
+              <motion.div className="flex items-start" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.8 }}>
                 <Search className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 text-red-400 mr-2 mt-0.5" />
                 <p className="text-gray-300">
-                  Especial interés en <span className="text-red-300">SEO técnico</span>.
+                  Últimamente estoy aprendiendo sobre <span className="text-red-300">buenas prácticas de SEO</span> y accesibilidad web.
                 </p>
               </motion.div>
             </div>
@@ -182,25 +161,17 @@ const AboutMe: React.FC = () => {
             </h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 2.2 }}
-              >
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.2 }}>
                 <h3 className="text-green-400 mb-1 text-sm sm:text-base">Frontend</h3>
                 <p className="text-gray-300 text-xs sm:text-sm">
-                  Interfaces accesibles y optimizadas para SEO, con atención a Core Web Vitals.
+                  Desarrollo de interfaces sencillas con HTML, CSS, JavaScript y React. Me esfuerzo en escribir código limpio y accesible.
                 </p>
               </motion.div>
               
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 2.4 }}
-              >
-                <h3 className="text-green-400 mb-1 text-sm sm:text-base">SEO Técnico</h3>
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.4 }}>
+                <h3 className="text-green-400 mb-1 text-sm sm:text-base">Backend</h3>
                 <p className="text-gray-300 text-xs sm:text-sm">
-                  Mejores prácticas para indexación, rendimiento y estructura semántica.
+                  Conocimientos en Node.js, React, Angular, Vue, Python, MySql y Firebase, utilizados en proyectos pequeños y personales.
                 </p>
               </motion.div>
             </div>
