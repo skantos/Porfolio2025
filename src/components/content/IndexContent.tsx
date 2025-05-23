@@ -7,13 +7,13 @@ import {
 
 export default function Home() {
   return (
-    <main className="w-full h-full min-h-screen flex items-center justify-center text-[#d1d1d1] font-['JetBrains_Mono'] px-4">
-      <div className="max-w-5xl w-full flex flex-col md:flex-row items-center justify-between gap-10 p-8">
+    <main className="w-full min-h-screen py-8 text-[#d1d1d1] font-['JetBrains_Mono'] px-4">
+      <div className="max-w-5xl w-full mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-10 p-4 md:p-8">
         {/* Sección izquierda */}
-        <section className="space-y-8 text-left w-full md:w-1/2">
-          <div>
-            <h1 className="text-4xl font-bold text-[#00ffcc]">Samuel Gajardo</h1>
-            <p className="text-lg text-[#999]">Software Development Engineer</p>
+        <section className="space-y-6 md:space-y-8 text-left w-full md:w-1/2">
+          <div className="mb-4">
+            <h1 className="text-3xl sm:text-4xl font-bold text-[#00ffcc]">Samuel Gajardo</h1>
+            <p className="text-base sm:text-lg text-[#999]">Software Development Engineer</p>
           </div>
 
           <div>
@@ -38,7 +38,7 @@ export default function Home() {
         </section>
 
         {/* Sección derecha */}
-        <aside className="w-full md:w-1/2 space-y-4">
+        <aside className="w-full md:w-1/2 space-y-4 mt-6 md:mt-0">
           <h2 className="text-xl text-left text-[#00ffff]">About</h2>
           <div className="space-y-4">
             <a href="https://www.linkedin.com/in/samuel-gajardos/" className="flex items-center justify-start bg-[#1a1a1a] hover:bg-[#222] border-l-4 border-[#00ffcc] py-3 px-4 rounded-md gap-2 transition">

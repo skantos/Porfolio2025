@@ -2,7 +2,7 @@ import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 export default function Contacto() {
   return (
-    <div className="w-full h-full overflow-y-auto">
+    <div className="w-full h-full">
       <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto py-8 px-4">
 
         <div className="bg-[#161b22] w-full p-4 md:p-6 rounded-xl border border-[#30363d] shadow-lg break-words">
