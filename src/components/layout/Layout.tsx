@@ -11,11 +11,9 @@ import { fileSystem } from '../../data/fileSystem';
 const Layout: React.FC = () => {
   const { setSidebarVisible } = useEditorStore();
   
-  // Initialize file system
   useEffect(() => {
     useEditorStore.setState({ fileSystem });
     
-    // Set sidebar visibility based on screen size
     const handleResize = () => {
       setSidebarVisible(window.innerWidth > 768);
     };

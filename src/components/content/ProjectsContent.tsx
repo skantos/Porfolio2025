@@ -1,144 +1,172 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Code } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 
-interface ProjectsContentProps {
-  projectId?: string;
-}
+import divkey from '../../images/divkey.png';
+import brands from '../../images/brands.png';
+import mitingu from '../../images/mitingu.png';
+import silvery from '../../images/silvery.png';
 
-const ProjectsContent: React.FC<ProjectsContentProps> = ({ projectId }) => {
-  const projects = [
+const ProjectsContent = ({ projectId }: { projectId?: string }) => {
+  const proyectos = [
     {
-      id: "startup",
-      name: "StartupLaunch",
-      description: "A platform for connecting startups with potential investors and mentors.",
-      image: "https://images.pexels.com/photos/936137/pexels-photo-936137.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      technologies: ["Next.js", "Firebase", "Tailwind CSS", "Vercel"],
-      links: {
-        github: "#",
-        live: "#"
+      id: "divkey",
+      nombre: "DivKey",
+      descripcion: "Soluciones digitales innovadoras que impulsan el futuro de tu negocio.",
+      imagen: divkey,
+      tecnologias: ["svelte", "react.js", "Tailwind CSS", "Firebase"],
+      enlaces: {
+        github: "#", 
+        live: "https://divkey.cl"
       },
-      features: [
-        "Startup profiles and pitches",
-        "Investor matching algorithm",
-        "Secure messaging system",
-        "Resource library"
+      caracteristicas: [
+        "Desarrollo de software a medida",
+        "Integraciones con APIs de terceros",
+        "Diseño de interfaces modernas y responsivas",
+        "Enfoque en soluciones escalables y seguras"
+      ]
+    },
+    {
+      id: "agenciabrands",
+      nombre: "Agencia Brands",
+      descripcion: "Agencia creativa enfocada en conectar marcas con sus audiencias mediante experiencias digitales únicas.",
+      imagen: brands,
+      tecnologias: ["svelte", "react.js", "Tailwind CSS", "Firebase"],
+      enlaces: {
+        github: "#",
+        live: "https://agenciabrands.cl"
+      },
+      caracteristicas: [
+        "Diseño de marca y posicionamiento",
+        "Desarrollo de sitios web personalizados",
+        "Producción audiovisual y fotografía",
+        "Estrategias de marketing digital"
+      ]
+    },
+    {
+      id: "mitingu",
+      nombre: "MITINGÜ",
+      descripcion: "Ecommerce dedicado a la venta de snacks, bebidas y productos asiáticos, enfocado en ofrecer una experiencia kawaii, rápida y segura.",
+      imagen: mitingu,
+      tecnologias: ["svelte", "react.js", "Tailwind CSS", "Firebase"],
+      enlaces: {
+        github: "#",
+        live: "https://pagina-mitingu.web.app/"
+      },
+      caracteristicas: [
+        "Diseño kawaii y experiencia visual amigable",
+        "Sistema de pagos seguros y protegidos",
+        "Envíos rápidos en 2-3 días hábiles",
+        "Carrito de compras y buscador interactivo",
+        "Productos importados directamente desde Asia"
+      ]
+    },
+    {
+      id: "silvery",
+      nombre: "Silvery",
+      descripcion: "Plataforma pensada para adultos mayores que buscan trabajo o desean ofrecer sus servicios en un entorno inclusivo, simple y amigable.",
+      imagen: silvery,
+      tecnologias: ["React", "Tailwind", "Firebase", "Node.js"],
+      enlaces: {
+        github: "#", 
+        live: "https://pagina-silvery.firebaseapp.com/"
+      },
+      caracteristicas: [
+        "Interfaz simple con tipografía y colores pensados para adultos mayores",
+        "Registro y login con validación segura",
+        "Publicación de ofertas laborales y servicios personales",
+        "Sistema de búsqueda y filtros personalizados",
+        "Enfoque en accesibilidad y usabilidad"
       ]
     }
   ];
 
-  const displayProjects = projectId 
-    ? projects.filter(p => p.id === projectId)
-    : projects;
+  const proyectosAMostrar = projectId ? proyectos.filter(p => p.id === projectId) : proyectos;
 
   return (
-    <div className="w-full h-full overflow-y-auto">
-      <div className="py-8 px-4">
-        {!projectId && (
-          <motion.h1 
-            className="text-3xl font-mono mb-8"
-            initial={{ opacity: 0, y: -20 }}
+    <div className="w-full h-full px-4 py-8 font-mono text-green-400 overflow-y-auto custom-scrollbar">
+      <motion.div
+        className="mb-6 text-lg"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+      >
+        <span className="text-pink-400">$</span> mostrarProyectos<span className="text-white">()</span>
+      </motion.div>
+
+      <div className="grid gap-8 md:grid-cols-3">
+        {proyectosAMostrar.map((proyecto, i) => (
+          <motion.div
+            key={proyecto.id + i}
+            className="flex flex-col justify-between"
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4, delay: i * 0.15 }}
           >
-            <span className="text-purple-400">function</span>{" "}
-            <span className="text-yellow-300">showcaseProjects</span>
-            <span className="text-white">()</span>{" "}
-            <span className="text-yellow-300">{`{`}</span>
-          </motion.h1>
-        )}
-        
-        <div className={`grid grid-cols-1 ${projectId ? '' : 'md:grid-cols-2'} gap-6 ${projectId ? '' : 'ml-6'}`}>
-          {displayProjects.map((project, index) => (
-            <motion.div 
-              key={project.id}
-              className="bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden border border-gray-700 flex flex-col"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-            >
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.name}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                />
+            {/* Imagen del proyecto */}
+            <div className="relative w-full h-64 md:h-80 rounded overflow-hidden border border-green-600">
+              <img
+                src={proyecto.imagen}
+                alt={proyecto.nombre}
+                className="object-cover w-full h-full opacity-80 hover:opacity-100 transition-opacity duration-300"
+              />
+              <div className="absolute bottom-0 left-0 bg-black bg-opacity-70 text-green-300 text-xs px-2 py-1">
+                vista previa: {proyecto.nombre.toLowerCase()}
               </div>
-              
-              <div className="p-4 flex-1 flex flex-col">
-                <div className="mb-3">
-                  <h2 className="text-xl text-yellow-300 font-semibold">{project.name}</h2>
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    {project.technologies.map((tech, i) => (
-                      <span 
-                        key={i} 
-                        className="px-2 py-0.5 bg-blue-900 bg-opacity-50 rounded text-xs text-blue-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+            </div>
+
+            {/* Contenido textual */}
+            <div className="mt-4 flex flex-col justify-between flex-1">
+              <div>
+                <div className="text-green-300">
+                  <span className="text-pink-400">❯</span> Proyecto: <span className="text-yellow-300">{proyecto.nombre}</span>
                 </div>
-                
-                <p className="text-gray-300 mb-4 flex-1">{project.description}</p>
-                
+
+                <div className="mt-1 text-gray-300">📄 {proyecto.descripcion}</div>
+
+                {/* <div className="mt-2">
+                  <span className="text-green-400">Tecnologías:</span>{" "}
+                  {proyecto.tecnologias.map((tecno, index) => (
+                    <span key={index} className="inline-block bg-gray-900 text-blue-300 px-2 py-0.5 rounded text-xs mr-2 mt-1">
+                      {tecno}
+                    </span>
+                  ))}
+                </div> */}
+
                 {projectId && (
-                  <div className="mb-4">
-                    <h3 className="text-blue-400 font-semibold mb-2">Key Features:</h3>
-                    <ul className="list-disc text-sm text-gray-300 ml-5 space-y-1">
-                      {project.features.map((feature, i) => (
-                        <li key={i}>{feature}</li>
+                  <div className="mt-3 text-gray-300">
+                    <span className="text-green-400">Características:</span>
+                    <ul className="list-disc list-inside ml-4 mt-1 text-sm">
+                      {proyecto.caracteristicas.map((carac, idx) => (
+                        <li key={idx}>{carac}</li>
                       ))}
                     </ul>
                   </div>
                 )}
-                
-                <div className="flex space-x-4 mt-2">
-                  <a 
-                    href={project.links.github} 
-                    className="flex items-center text-sm text-gray-300 hover:text-blue-400 transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Github className="w-4 h-4 mr-1" />
-                    <span>Source</span>
-                  </a>
-                  
-                  <a 
-                    href={project.links.live} 
-                    className="flex items-center text-sm text-gray-300 hover:text-blue-400 transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-1" />
-                    <span>Live Demo</span>
-                  </a>
-                  
-                  {!projectId && (
-                    <a 
-                      href="#" 
-                      className="flex items-center text-sm text-gray-300 hover:text-blue-400 transition-colors ml-auto"
-                    >
-                      <Code className="w-4 h-4 mr-1" />
-                      <span>Details</span>
-                    </a>
-                  )}
-                </div>
               </div>
-            </motion.div>
-          ))}
-        </div>
-        
-        {!projectId && (
-          <motion.h1 
-            className="text-3xl font-mono mt-8 ml-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            <span className="text-yellow-300">{`}`}</span>
-          </motion.h1>
-        )}
+
+              {/* Enlaces */}
+              <div className="mt-3 flex gap-4 text-sm">
+                {/* <a
+                  href={proyecto.enlaces.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:underline flex items-center"
+                >
+                  <Github className="w-4 h-4 mr-1" /> GitHub
+                </a> */}
+                <a
+                  href={proyecto.enlaces.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:underline flex items-center"
+                >
+                  <ExternalLink className="w-4 h-4 mr-1" /> Ver
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </div>
   );

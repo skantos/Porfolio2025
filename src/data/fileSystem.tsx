@@ -13,7 +13,7 @@ import IndexContent from '../components/content/IndexContent';
 export const fileSystem: FileSystemItem[] = [
   {
     id: 'about-folder',
-    name: 'About',
+    name: 'Acerca de mi',
     icon: 'folder',
     type: 'folder',
     path: '/about',
@@ -21,7 +21,7 @@ export const fileSystem: FileSystemItem[] = [
     children: [
       {
         id: 'index-html',
-        name: 'index.html',
+        name: 'Index.html',
         icon: 'html',
         type: 'file',
         path: '/about/index.html',
@@ -29,7 +29,7 @@ export const fileSystem: FileSystemItem[] = [
       },
       {
         id: 'experience-css',
-        name: 'experience.css',
+        name: 'Experiencia.css',
         icon: 'css',
         type: 'file',
         path: '/about/experience.css',
@@ -37,7 +37,7 @@ export const fileSystem: FileSystemItem[] = [
       },
       {
         id: 'skills-js',
-        name: 'skills.js',
+        name: 'Habilidades.js',
         icon: 'javascript',
         type: 'file',
         path: '/about/skills.js',
@@ -45,7 +45,7 @@ export const fileSystem: FileSystemItem[] = [
       },
       {
         id: 'projects-ts',
-        name: 'projects.ts',
+        name: 'Proyectos.ts',
         icon: 'typescript',
         type: 'file',
         path: '/about/projects.ts',
@@ -54,80 +54,6 @@ export const fileSystem: FileSystemItem[] = [
     ]
   },
 
-  // {
-  //   id: 'side-projects',
-  //   name: 'Side Projects',
-  //   icon: 'folder',
-  //   type: 'folder',
-  //   path: '/side-projects',
-  //   isOpen: false,
-  //   children: [
-  //     {
-  //       id: 'ayesoul-js',
-  //       name: 'AyeSoul.js',
-  //       icon: 'javascript',
-  //       type: 'file',
-  //       path: '/side-projects/ayesoul.js',
-  //       content: <ProjectsContent projectId="ayesoul" />
-  //     },
-  //     {
-  //       id: 'ayehigh-js',
-  //       name: 'AyeHigh.js',
-  //       icon: 'javascript',
-  //       type: 'file',
-  //       path: '/side-projects/ayehigh.js',
-  //       content: <ProjectsContent projectId="ayehigh" />
-  //     },
-  //     {
-  //       id: 'ninetails-ts',
-  //       name: 'NineTails.ts',
-  //       icon: 'typescript',
-  //       type: 'file',
-  //       path: '/side-projects/ninetails.ts',
-  //       content: <ProjectsContent projectId="ninetails" />
-  //     },
-  //     {
-  //       id: 'ayedot-js',
-  //       name: 'AyeDot.js',
-  //       icon: 'javascript',
-  //       type: 'file',
-  //       path: '/side-projects/ayedot.js',
-  //       content: <ProjectsContent projectId="ayedot" />
-  //     },
-  //     {
-  //       id: 'ayefun-js',
-  //       name: 'AyeFun.js',
-  //       icon: 'javascript',
-  //       type: 'file',
-  //       path: '/side-projects/ayefun.js',
-  //       content: <ProjectsContent projectId="ayefun" />
-  //     },
-  //     {
-  //       id: 'ownvcs-ts',
-  //       name: 'OwnVCS.ts',
-  //       icon: 'typescript',
-  //       type: 'file',
-  //       path: '/side-projects/ownvcs.ts',
-  //       content: <ProjectsContent projectId="ownvcs" />
-  //     },
-  //     {
-  //       id: 'firelow-js',
-  //       name: 'firelow.js',
-  //       icon: 'javascript',
-  //       type: 'file',
-  //       path: '/side-projects/firelow.js',
-  //       content: <ProjectsContent projectId="firelow" />
-  //     },
-  //     {
-  //       id: 'shortbi-js',
-  //       name: 'ShortBI.js',
-  //       icon: 'javascript',
-  //       type: 'file',
-  //       path: '/side-projects/shortbi.js',
-  //       content: <ProjectsContent projectId="shortbi" />
-  //     }
-  //   ]
-  // },
 
   {
     id: 'contact-folder',
@@ -148,56 +74,6 @@ export const fileSystem: FileSystemItem[] = [
     ]
   },
 
-  // {
-  //   id: 'misc-folder',
-  //   name: 'Musica',
-  //   icon: 'folder',
-  //   type: 'folder',
-  //   path: '/misc',
-  //   isOpen: false,
-  //   children: [
-  //     {
-  //       id: 'blogs-py',
-  //       name: 'Blogs.py',
-  //       icon: 'python',
-  //       type: 'file',
-  //       path: '/misc/blogs.py',
-  //       content: <ProjectsContent projectId="blogs" />
-  //     },
-  //     {
-  //       id: 'gaming-sln',
-  //       name: 'Gaming.sln',
-  //       icon: 'csharp',
-  //       type: 'file',
-  //       path: '/misc/gaming.sln',
-  //       content: <HobbiesContent hobby="gaming" />
-  //     },
-  //     {
-  //       id: 'anime-jsx',
-  //       name: 'Anime.jsx',
-  //       icon: 'react',
-  //       type: 'file',
-  //       path: '/misc/anime.jsx',
-  //       content: <HobbiesContent hobby="anime" />
-  //     },
-  //     {
-  //       id: 'learning-ts',
-  //       name: 'Learning.ts',
-  //       icon: 'typescript',
-  //       type: 'file',
-  //       path: '/misc/learning.ts',
-  //       content: <SkillsContent category="learning" />
-  //     },
-  //     {
-  //       id: 'startup-js',
-  //       name: 'Startup.js',
-  //       icon: 'javascript',
-  //       type: 'file',
-  //       path: '/misc/startup.js',
-  //       content: <ProjectsContent projectId="startup" />
-  //     }
-  //   ]
-  // }
 
 ];
 

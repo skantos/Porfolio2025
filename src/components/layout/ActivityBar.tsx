@@ -2,6 +2,7 @@ import React from 'react';
 import { useTheme } from '../ui/ThemeProvider';
 import { useEditorStore } from '../../store/useEditorStore';
 import { motion } from 'framer-motion';
+
 import { 
   User, Code, Briefcase, Mail, Cog, Menu,
   Github, Linkedin, 
@@ -56,23 +57,23 @@ const ActivityBar: React.FC = () => {
           icon={<Menu size={24} />}
           active={sidebarVisible}
           onClick={toggleSidebar}
-          tooltip="Toggle Sidebar"
+          // tooltip="Toggle Sidebar"
         />
         <ActivityBarItem 
           icon={<User size={24} />}
-          tooltip="About"
+          // tooltip="About"
         />
         <ActivityBarItem 
           icon={<Code size={24} />}
-          tooltip="Skills"
+          // tooltip="Skills"
         />
         <ActivityBarItem 
           icon={<Briefcase size={24} />}
-          tooltip="Projects"
+          // tooltip="Projects"
         />
         <ActivityBarItem 
           icon={<Mail size={24} />}
-          tooltip="Contact"
+          // tooltip="Contact"
         />
       </div>
       
