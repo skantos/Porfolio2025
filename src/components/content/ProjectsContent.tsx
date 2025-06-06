@@ -6,6 +6,8 @@ import divkey from '../../images/divkey.png';
 import brands from '../../images/brands.png';
 import mitingu from '../../images/mitingu.png';
 import silvery from '../../images/silvery.png';
+import prueba from '../../images/prueba.png';
+
 
 const ProjectsContent = ({ projectId }: { projectId?: string }) => {
   const proyectos = [
@@ -19,12 +21,6 @@ const ProjectsContent = ({ projectId }: { projectId?: string }) => {
         github: "#", 
         live: "https://divkey.cl"
       },
-      caracteristicas: [
-        "Desarrollo de software a medida",
-        "Integraciones con APIs de terceros",
-        "Diseño de interfaces modernas y responsivas",
-        "Enfoque en soluciones escalables y seguras"
-      ]
     },
     {
       id: "agenciabrands",
@@ -36,12 +32,6 @@ const ProjectsContent = ({ projectId }: { projectId?: string }) => {
         github: "#",
         live: "https://agenciabrands.cl"
       },
-      caracteristicas: [
-        "Diseño de marca y posicionamiento",
-        "Desarrollo de sitios web personalizados",
-        "Producción audiovisual y fotografía",
-        "Estrategias de marketing digital"
-      ]
     },
     {
       id: "mitingu",
@@ -51,15 +41,8 @@ const ProjectsContent = ({ projectId }: { projectId?: string }) => {
       tecnologias: ["svelte", "react.js", "Tailwind CSS", "Firebase"],
       enlaces: {
         github: "#",
-        live: "https://pagina-mitingu.web.app/"
+        live: "https://e-commerce-mitingu-production.up.railway.app/"
       },
-      caracteristicas: [
-        "Diseño kawaii y experiencia visual amigable",
-        "Sistema de pagos seguros y protegidos",
-        "Envíos rápidos en 2-3 días hábiles",
-        "Carrito de compras y buscador interactivo",
-        "Productos importados directamente desde Asia"
-      ]
     },
     {
       id: "silvery",
@@ -71,14 +54,18 @@ const ProjectsContent = ({ projectId }: { projectId?: string }) => {
         github: "#", 
         live: "https://pagina-silvery.firebaseapp.com/"
       },
-      caracteristicas: [
-        "Interfaz simple con tipografía y colores pensados para adultos mayores",
-        "Registro y login con validación segura",
-        "Publicación de ofertas laborales y servicios personales",
-        "Sistema de búsqueda y filtros personalizados",
-        "Enfoque en accesibilidad y usabilidad"
-      ]
-    }
+    },
+    {
+      id: "prueba",
+      nombre: "Prueba Tecnica VUE",
+      descripcion: "Aplicación en Vue.js que permite visualizar información bursátil por componente, con estado global (Pinia) y actualizaciones en tiempo real al seleccionar instrumentos.",
+      imagen: prueba,
+      tecnologias: ["svelte", "react.js", "Tailwind CSS", "Firebase"],
+      enlaces: {
+        github: "#",
+        live: "https://prueba-vuejs-d9fb1.web.app/"
+      },
+    },
   ];
 
   const proyectosAMostrar = projectId ? proyectos.filter(p => p.id === projectId) : proyectos;
