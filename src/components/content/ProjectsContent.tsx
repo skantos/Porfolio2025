@@ -7,6 +7,7 @@ import brands from '../../images/brands.png';
 import mitingu from '../../images/mitingu.png';
 import silvery from '../../images/silvery.png';
 import prueba from '../../images/prueba.png';
+import middify from '../../images/image.png';
 
 
 const ProjectsContent = ({ projectId }: { projectId?: string }) => {
@@ -20,6 +21,18 @@ const ProjectsContent = ({ projectId }: { projectId?: string }) => {
       enlaces: {
         github: "#", 
         live: "https://divkey.cl"
+      },
+    },
+    {
+      id: "NutIa",
+      nombre: "NutIa",
+      descripcion:
+        "Landing page para concurso de NutIa",
+      imagen: middify,
+      tecnologias: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+      enlaces: {
+        github: "#",
+        live: "https://nutria-83c11.web.app/"
       },
     },
     {

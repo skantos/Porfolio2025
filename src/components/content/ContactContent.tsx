@@ -83,7 +83,6 @@ export default function Contacto() {
                   <li>🎓 Ingeniería en Informática — INACAP (2021-2024)</li>
                   <li>📚 Aprendiendo: análisis de datos y machine learning</li>
                   <li>🛠️ Stack principal: JavaScript, React, Node.js, Firebase, Python</li>
-                  <li>💼 Proyecto destacado: Montino App para un negocio local</li>
                 </ul>
               </div>
 

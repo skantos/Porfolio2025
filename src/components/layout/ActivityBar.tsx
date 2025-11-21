@@ -4,8 +4,7 @@ import { useEditorStore } from '../../store/useEditorStore';
 import { motion } from 'framer-motion';
 
 import { 
-  User, Code, Briefcase, Mail, Cog, Menu,
-  Github, 
+  User, Code, Briefcase, Mail, Menu, Github,
 } from 'lucide-react';
 
 interface ActivityBarItemProps {
@@ -45,7 +44,34 @@ const ActivityBarItem: React.FC<ActivityBarItemProps> = ({
 
 const ActivityBar: React.FC = () => {
   const { colors } = useTheme();
-  const { sidebarVisible, toggleSidebar } = useEditorStore();
+  const { sidebarVisible, toggleSidebar, openFileByPath, activeTab } = useEditorStore();
+
+  const quickActions = [
+    {
+      id: 'index-html',
+      icon: <User size={24} />,
+      tooltip: 'Sobre mí',
+      action: () => openFileByPath('/about/index.html'),
+    },
+    {
+      id: 'skills-js',
+      icon: <Code size={24} />,
+      tooltip: 'Habilidades',
+      action: () => openFileByPath('/about/skills.js'),
+    },
+    {
+      id: 'experience-css',
+      icon: <Briefcase size={24} />,
+      tooltip: 'Experiencia',
+      action: () => openFileByPath('/about/experience.css'),
+    },
+    {
+      id: 'email-tsx',
+      icon: <Mail size={24} />,
+      tooltip: 'Contacto',
+      action: () => openFileByPath('/contact/email.tsx'),
+    },
+  ];
 
   return (
     <div 
@@ -57,24 +83,17 @@ const ActivityBar: React.FC = () => {
           icon={<Menu size={24} />}
           active={sidebarVisible}
           onClick={toggleSidebar}
-          // tooltip="Toggle Sidebar"
+          tooltip={sidebarVisible ? 'Ocultar panel lateral' : 'Mostrar panel lateral'}
         />
-        <ActivityBarItem 
-          icon={<User size={24} />}
-          // tooltip="About"
-        />
-        <ActivityBarItem 
-          icon={<Code size={24} />}
-          // tooltip="Skills"
-        />
-        <ActivityBarItem 
-          icon={<Briefcase size={24} />}
-          // tooltip="Projects"
-        />
-        <ActivityBarItem 
-          icon={<Mail size={24} />}
-          // tooltip="Contact"
-        />
+        {quickActions.map((item) => (
+          <ActivityBarItem
+            key={item.id}
+            icon={item.icon}
+            active={activeTab === item.id}
+            onClick={item.action}
+            tooltip={item.tooltip}
+          />
+        ))}
       </div>
       
       <div>
