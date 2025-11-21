@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLinkedin, FaGithub, FaCode } from "react-icons/fa";
+import { FaGithub, FaCode } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { useEditorStore } from '../../store/useEditorStore';
 
@@ -39,13 +39,13 @@ export default function Home() {
         <aside className="w-full md:w-1/2 space-y-4 mt-6 md:mt-0">
           <h2 className="text-xl text-left text-[#00ffff]">About</h2>
           <div className="space-y-4">
-            <a href="https://www.linkedin.com/in/samuel-gajardos/" target="_blank" rel="noopener noreferrer"
-              className="flex items-center justify-start bg-[#1a1a1a] hover:bg-[#222] border-l-4 border-[#00ffcc] py-3 px-4 rounded-md gap-2 transition">
-              <FaLinkedin className="text-blue-400" /> LinkedIn Profile
-            </a>
             <a href="https://github.com/skantos" target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-start bg-[#1a1a1a] hover:bg-[#222] border-l-4 border-[#00ffcc] py-3 px-4 rounded-md gap-2 transition">
-              <FaGithub className="text-gray-300" /> Github Page
+              <FaGithub className="text-gray-300" /> GitHub Profile
+            </a>
+            <a href="https://github-readme-stats.vercel.app/api?username=skantos&show_icons=true&theme=github_dark&hide_border=true" target="_blank" rel="noopener noreferrer"
+              className="flex items-center justify-start bg-[#1a1a1a] hover:bg-[#222] border-l-4 border-[#00ffcc] py-3 px-4 rounded-md gap-2 transition text-sm">
+              <FaCode className="text-[#00ffcc]" /> Ver estadísticas en GitHub Readme Stats
             </a>
 
             <div className="animate-pulse flex items-center gap-2 text-sm text-[#00ffcc] mt-6">

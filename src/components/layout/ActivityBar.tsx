@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 import { 
   User, Code, Briefcase, Mail, Cog, Menu,
-  Github, Linkedin, 
+  Github, 
 } from 'lucide-react';
 
 interface ActivityBarItemProps {
@@ -82,11 +82,6 @@ const ActivityBar: React.FC = () => {
           icon={<Github size={24} />}
           tooltip="GitHub"
           onClick={() => window.open('https://github.com/skantos', '_blank')}
-        />
-        <ActivityBarItem 
-          icon={<Linkedin size={24} />}
-          tooltip="LinkedIn"
-          onClick={() => window.open('https://www.linkedin.com/in/samuel-gajardos/', '_blank')}
         />
       </div>
     </div>
